@@ -1,15 +1,22 @@
 int count = 0;
+
+// An array of Commentary to be shown when the timer hits a certain time
+
 String Commentary [] = {
   "Thank you for tryin out this demo", "You are still using it, thanks", "Random Feed 3", "This could get boring after a while", "Blank Statements Dont Count"
 };
 
-void coordinates()
+//Marks The X and Y coordinates of the mouse
+
+void coordinates()      
 {
   pushMatrix();
   translate(mouseX, mouseY, 0);
   text("X axis : " + mouseX + " , " + " Y axis : " +  mouseY, 0, 150);
   popMatrix();
 }
+
+// Time function
 
 void timer()
 {
@@ -18,11 +25,15 @@ void timer()
   textSize(width/72);
   text(time + " seconds has elapsed", 0, 100);
 
+// Producing textual confirmation of the length of usage
+
   if (time > 60)
   {
     text(Commentary[1], 0, 150);
   }
 }
+
+//declaring a function for the spheres to be used
 
 void ellipses()
 {
@@ -42,7 +53,7 @@ void setup() {
   smooth();
 }
 
-// by utilzing the height and width function alongside the dividing principles of the day
+// by utilzing the height and width function alongside the dividing principles of the display
 
 void draw() {
   lights();
